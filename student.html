@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <div class="flex justify-center">
+            <img src="Kendriya Vidyalaya Sangathan logo.png" alt="Illustration" class="w-32 mb-4">
+        </div>
+        <h2 class="text-2xl font-bold text-center mb-4">Sign up as student</h2>
+        
+        <a href="index.html">
+            <button class="w-full bg-green-500 text-white p-3 rounded-lg font-bold mt-4">
+                Home
+            </button>
+        </a><br><br>
+        
+        <form id="loginForm">
+            <div class="mb-4">
+                <label class="block text-gray-700">Your Email</label>
+                <input type="email" class="w-full p-3 border rounded-lg" placeholder="Enter your email" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700">Student ID</label>
+                <input type="text" class="w-full p-3 border rounded-lg" placeholder="Enter your 15-digit ID" minlength="15" maxlength="15" pattern="\d{15}" required>
+            </div>
+
+            <div class="mb-4 relative">
+                <label class="block text-gray-700">Password</label>
+                <input id="password" type="password" class="w-full p-3 border rounded-lg pr-10" placeholder="Enter your password" required>
+                <button type="button" onclick="togglePassword()" class="absolute right-3 top-10">
+                    👁️
+                </button>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-lg font-bold">
+                Log In
+            </button>
+        </form>
+
+        <a href="studentreg.html">
+            <p class="text-center text-gray-600 mt-4">Create an account</p>
+        </a>
+    </div>
+
+    <script>
+        function togglePassword() {
+            let password = document.getElementById("password");
+            password.type = (password.type === "password") ? "text" : "password";
+        }
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents form submission
+            window.location.href = "studentdet.html"; // Redirect to studentdet.html after login
+        });
+    </script>
+
+</body>
+</html>

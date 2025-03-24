@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KVS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hidden-image {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    
+    <!-- Navbar with Logo -->
+      <nav class="w-full bg-[#7B68EE] flex justify-between items-center py-4 px-6"> 
+        <div class="flex items-center space-x-9">
+            <img src="Kendriya Vidyalaya Sangathan logo.png" alt="Logo" class="h-20">
+            <span class="text-white text-2xl font-bold">Kendriya Vidyalaya Sangathan</span>
+        </div>
+        <div class="space-x-6">
+            <a href="index.html" target="_blank" class="text-white">
+    Home
+</a>
+            <a href="https://en.wikipedia.org/wiki/Kendriya_Vidyalaya_Sangathan" target="_blank" class="text-white">
+    About
+</a>
+            <a href="https://www.google.com/search?q=kendriya+vidyalaya+head+office+phone+number&client=opera-gx&hs=SC1&sca_esv=45c41d3e543101a5&ei=f73ZZ4CHHNXH4-EP-NbgiQw&oq=kendriya+vidyalaya+headquarters+ph&gs_lp=Egxnd3Mtd2l6LXNlcnAiImtlbmRyaXlhIHZpZHlhbGF5YSBoZWFkcXVhcnRlcnMgcGgqAggAMgYQABgWGB4yCxAAGIAEGIYDGIoFMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCxAAGIAEGIYDGIoFMggQABiABBiiBDIFEAAY7wUyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogRIzBRQjwNYkAhwAXgBkAEAmAGEAqAB9ASqAQUwLjIuMbgBAcgBAPgBAZgCBKACswXCAgoQABiwAxjWBBhHwgIFEAAYgASYAwCIBgGQBgiSBwUxLjIuMaAH5BSyBwUwLjIuMbgHpQU&sclient=gws-wiz-serp" target="_blank" class="text-white">
+    Contact
+</a>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="flex flex-col items-center justify-between min-h-screen p-10">
+        <h1 class="text-3xl font-bold">ONLINE PORTAL FOR STUDENT AND TEACHER</h1>
+        <P><H1>The Kendriya Vidyalaya Sangathan (Central Schools Organisation) is a system of central government schools in India governed by the Ministry of Education, Government of India. As of April 2023, it has a total of 1,253 schools in India, and three abroad, in Kathmandu, Moscow and Tehran. It is one of the world's largest chains of schools and the largest chain of schools in India. It is controlled by 25 Regional Offices and 05 ZIETs (Zonal Institute of Education and Training) under the KVS headquarters.
+
+In April 2022, the Centre decided to remove an MP quota for KV students, invalidating parliamentarians' recommendations for admission to the schools</H1></P>
+        
+        <!-- Buttons at Bottom -->
+        <div class="flex justify-center space-x-4 mt-4">
+          <a href="student.html">  <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Login for Student</button></a>
+            <button class="bg-green-500 text-white px-4 py-2 rounded-lg">Login for Teacher</button>
+        </div>
+    </div>
+    
+    <!-- Images Appearing on Scroll -->
+    <div class="grid grid-cols-2 gap-6 p-10">
+        <img src="HA.jpeg" alt="Image 1" class="hidden-image w-full rounded-lg shadow-lg">
+        <img src="HA2.jpeg" alt="Image 2" class="hidden-image w-full rounded-lg shadow-lg">
+        <img src="HA3.jpeg" alt="Image 3" class="hidden-image w-full rounded-lg shadow-lg">
+        <img src="HA4.jpeg" alt="Image 4" class="hidden-image w-full rounded-lg shadow-lg">
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll(".hidden-image");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            images.forEach(image => observer.observe(image));
+        });
+    </script>
+    <footer class="bg-[#7B68EE] text-white text-center py-12">
+    <h2 class="text-3xl font-bold">login now</h2>
+    
+    <button onclick="scrollToTop()" class="mt-6 bg-orange-500 text-white px-6 py-3 font-bold rounded-md">
+    GO TO TOP
+</button>
+
+<script>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+     <a href="https://en.wikipedia.org/wiki/Kendriya_Vidyalaya_Sangathan" target="_blank">
+    <p class="mt-4 text-black-400 underline cursor-pointer">know more about us &rarr;</p>
+</a>
+</footer>
+
+</body>
+</html>
